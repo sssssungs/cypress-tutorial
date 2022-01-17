@@ -16,4 +16,9 @@ describe("desc", () => {
     cy.get("button").click();
     cy.contains("clicked!!");
   });
+
+  it("test three", () => {
+    cy.visit("http://localhost:3000");
+    cy.url().should("include", "localhost");
+  });
 });
