@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const [text, setText] = React.useState("");
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +19,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>text: {text}</p>
+        <button onClick={() => setText("clicked!!")}>textButton</button>
       </header>
     </div>
   );
