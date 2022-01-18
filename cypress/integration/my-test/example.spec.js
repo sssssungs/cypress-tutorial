@@ -8,6 +8,7 @@ describe("desc", () => {
   it("test: contain and should", () => {
     cy.viewport("iphone-se2");
     cy.contains("Edit src/App.tsx and save to reload.");
+    // cy.debug();
     cy.contains("reload.").should(
       "have.text",
       "Edit src/App.tsx and save to reload."
@@ -25,5 +26,11 @@ describe("desc", () => {
 
   it("test: type some word", () => {
     cy.get("input").type("hello world");
+  });
+
+  it("test: timeout", () => {
+    cy.get("[data-testid=text3]")
+      .contains("text3", { timeout: 3000 })
+      .should("exist");
   });
 });

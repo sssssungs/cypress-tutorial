@@ -5,6 +5,14 @@ import "./App.css";
 function App() {
   const [text, setText] = React.useState("");
   const [text2, setText2] = React.useState("");
+  const [text3, setText3] = React.useState("");
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setText3("text3");
+    }, 2000);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +29,7 @@ function App() {
           Learn React
         </a>
         <p>text: {text}</p>
+        <div data-testid={"text3"}>{text3}</div>
         <button onClick={() => setText("clicked!!")}>textButton</button>
         <input onChange={(e) => setText2(e.target.value)} value={text2} />
       </header>
